@@ -20,17 +20,19 @@
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
     
-<script>
+    <script>
+      // Add an event listener to the "No" button
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
-          var yesButton = document.querySelector(
-            'button[onclick*="thankyou.html"]'
-          );
-          var currentFontSize = parseInt(
-            window.getComputedStyle(yesButton).fontSize
-          );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          // Select the "Yes" button by its ID
+          var yesButton = document.getElementById("yesButton");
+          
+          // Get the current font size of the "Yes" button
+          var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+          
+          // Increase the font size of the "Yes" button by 10px
+          yesButton.style.fontSize = currentFontSize + 10 + "px";
         });
     </script>
 
