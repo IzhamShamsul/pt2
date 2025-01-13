@@ -21,37 +21,18 @@
     <img src="cat.gif" alt="cat asking question" class="responsive" />
     
 <script>
-  // Replace with your Google Apps Script URL
-  const scriptURL = "https://script.google.com/macros/s/AKfycbypCJ9wvIP-6rGyzKDsrLLGv_-WzwCmhNosyN8kyaCAVnPOY3zhTrzotuYiPOA6DDaM/exec";
-
-  function sendResponse(response) {
-    fetch(scriptURL, {
-      method: "POST",
-      mode: "no-cors", // Bypass CORS
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ response: response }),
-    })
-      .then(() => {
-        alert("Response submitted: " + response);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Failed to submit response.");
-      });
-  }
-
-  // Attach to buttons
-  document.getElementById("yesButton").addEventListener("click", function () {
-    sendResponse("Yes");
-    location.href = "thankyou.html"; // Redirect to thank-you page
-  });
-
-  document.getElementById("noButton").addEventListener("click", function () {
-    sendResponse("No");
-  });
-</script>
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          var yesButton = document.querySelector(
+            'button[onclick*="thankyou.html"]'
+          );
+          var currentFontSize = parseInt(
+            window.getComputedStyle(yesButton).fontSize
+          );
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+        });
+    </script>
 
   </body>
 </html>
