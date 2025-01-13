@@ -10,7 +10,7 @@
     <div id="valentineQuestion"><b>Will you go out with me?</b></div>
     
     <!-- Yes button added with the id yesButton -->
-    <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
+    <button class="answerButton" id="yesButton">
       Yes
     </button>
     
@@ -21,6 +21,11 @@
     <img src="cat.gif" alt="cat asking question" class="responsive" />
     
     <script>
+      // Add an event listener to the "Yes" button for redirect
+      document.getElementById("yesButton").addEventListener("click", function() {
+        window.location.href = "thankyou.html"; // Redirect to thank-you page
+      });
+
       // Add an event listener to the "No" button
       document
         .getElementById("noButton")
